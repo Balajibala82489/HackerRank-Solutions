@@ -1,0 +1,42 @@
+'''Task
+
+You are given two integer arrays of size
+X and X ( & are rows, and is the column). Your task is to concatenate the arrays along axis
+
+.
+
+Input Format
+
+The first line contains space separated integers
+, and .
+The next lines contains the space separated elements of the columns.
+After that, the next lines contains the space separated elements of the
+
+columns.
+
+Output Format
+
+Print the concatenated array of size
+X.'''
+
+# here the program starts
+import numpy
+k=input().split()
+list2=[]
+for i in range(0,int(k[0])):
+    first=input().split()
+    for j in first:
+        list2+=[int(j)]
+list3=[]
+for i in range(0,int(k[1])):
+    second= input().split()
+    for j in second:
+        list3+=[int(j)]
+#converting list1 into array
+array_1=numpy.array(list2)
+arr1=numpy.reshape(array_1,(int(k[0]),int(k[2])))
+#converting list2 into array
+array_2=numpy.array(list3)
+#reshaping the array as per the given dimesion
+arr2=numpy.reshape(array_2,(int(k[1]),int(k[2])))
+print(numpy.concatenate((arr1,arr2),axis=0))
